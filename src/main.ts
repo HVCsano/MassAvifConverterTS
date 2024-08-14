@@ -22,6 +22,17 @@ async function main() {
         if(!supportedExt.includes(ext)) break;
         let filename = name.toString().replaceAll(",",".")
         await $`ffmpeg -i ${Bun.env.dir}/${cucc.kep} ${Bun.env.dir}/${filename}.avif`
+        await prisma.data.update({
+            where: {
+                id: cucc.id
+            },
+            select: {
+                kep: true
+            },
+            data: {
+                kep: `${filename}.avif`
+            }
+        })
     }
 }
 main()
