@@ -8,6 +8,9 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "scripts": {
+    "start": "prisma generate && bun run src/main.ts"
+  },
   "dependencies": {
     "@prisma/client": "5.18.0",
     "prisma": "^5.18.0"
