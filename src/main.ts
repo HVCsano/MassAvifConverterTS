@@ -15,7 +15,7 @@ async function main() {
             
         }
         let filename = name.toString().replaceAll(",",".")
-        await $`ffmpeg -i ./muti/${cucc.kep} ./muti/${filename}.avif`
+        await $`ffmpeg -i ${Bun.env.dir}/${cucc.kep} ${Bun.env.dir}/${filename}.avif`
     }
 }
 main()
